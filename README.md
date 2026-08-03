@@ -10,21 +10,23 @@ Retrieval-Augmented Generation (RAG) and a Router → Researcher → Critic
 agent pipeline built with LangGraph.
 
 ---
+## live demo link
+
+https://research-synthesis-assistant-rx9gdfxvmbrxbjbl5adcel.streamlit.app/
+
+---
+Developer
+
+**K.L.A.R.S.Perera** - **ITBIN-2313-0080**
+
+---
 
 ## 1. Architecture
 
-```mermaid
-flowchart TD
-    A[Streamlit UI<br/>chat + sidebar secrets] --> B[Router Agent<br/>Groq Llama 3.1 8B]
-    B -->|intent: summarize / critique /<br/>extract_datasets / general| C[Retrieval Tool<br/>RAG vector search]
-    C --> D[(Chroma Vector Store<br/>all-MiniLM-L6-v2 embeddings)]
-    D --> C
-    C --> E[Agent 1: Literature Researcher<br/>OpenRouter Claude 3.5 Sonnet / GPT-4o-mini]
-    E -->|structured JSON synthesis| F[Agent 2: Academic Critic<br/>OpenRouter Claude 3.5 Sonnet / GPT-4o-mini]
-    F -->|needs_revision = true| E
-    F -->|needs_revision = false| G[Finalizer]
-    G --> A
-```
+
+<img width="743" height="773" alt="Untitled Diagram drawio" src="https://github.com/user-attachments/assets/301c55a1-040f-41f0-83a8-c20301d9989c" />
+
+---
 
 **Agentic patterns implemented (3 required, 3 delivered):**
 
